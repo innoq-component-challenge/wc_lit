@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>WebComponent based components</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Badges</h1>
+        <div>
+            This is a <lit-badge type="danger">Badge</lit-badge>
+        </div>
+
+        <h1 class="mt-5">Buttons</h1>
+        <lit-button>Simple lit-button <lit-badge caption="Some Badge" type="danger"></lit-badge></lit-button>
+        <hr />
+        <lit-button type="cta" additional-classes="text-uppercase">CTA lit-button with uppercase</lit-button>
+        <hr />
+        <lit-button data-foo="bar" aria-live="polite">lit-button with additional attributes</lit-button>
+        <hr />
+        <lit-button type="button" name="action" value="delete">lit-button with name and value</lit-button>
+
+        <h1 class="mt-5">Cards</h1>
+        <lit-card heading-level="2" heading="FND"> 
+            Welcome to the <strong>best card</strong>
+            <span slot="heading"><span lang="de">Großartige</span> Card</span>
+            <span slot="footer">This is the footer!</span>
+        </lit-card>
+        <hr />
+        <lit-card heading-level="2" heading="Another lit-card with a Link as Header" href="#foo"> Content baby! </lit-card>
+
+        <h1 class="mt-5">List</h1>
+        <lit-list>
+            <lit-list-dt>Type</lit-list-dt>
+            <lit-list-dd>Car</lit-list-dd>
+            <lit-list-dt>Color</lit-list-dt>
+            <lit-list-dd><span lang="de">Etwas</span> text</lit-list-dd>
+        </lit-list>
+        
+        <h1 class="mt-5">MagicHeaders</h1>
+        <lit-mh-section>
+            <article>
+                <header>
+                    <lit-mh-heading>Some h1</lit-mh-heading>
+                    <p class="tagline"> Content </p>
+                </header>
+                <lit-mh-section>
+                    <section>
+                        <lit-mh-heading>Some h2</lit-mh-heading>
+                    </section>
+                    <p>Some more content</p>
+                    <lit-mh-section>
+                        <div class="foo bar">
+                            <lit-mh-heading>Some h3</lit-mh-heading>
+                        </div>
+                        <p>Some more content</p>
+                    </lit-mh-section>
+                </lit-mh-section>
+                <lit-mh-section>
+                    <section>
+                        <lit-mh-heading>Again some h2</lit-mh-heading>
+                    </section>
+                    <p>Some more content</p>
+                </lit-mh-section>
+            </article>
+        </lit-mh-section>
+
+        <h1 class="mt-5">Form Group</h1>
+        <lit-form-group-simple type="email" id="my-email" label="eMail" name="users_email" value="BOOM" error="'BOOM' is not a valid eMail addreess" />
+    </div>
+
+    <script type="module" src="components/badge.js"></script>
+    <script type="module" src="components/button.js"></script>
+    <script type="module" src="components/card.js"></script>
+</body>
+
+</html>

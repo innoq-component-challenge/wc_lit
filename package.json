@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "wc_lit",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+     "run": "python -m SimpleHTTPServer 8000"
+  },
+  "devDependencies": {
+  },
+  "dependencies": {
+  }
+}
