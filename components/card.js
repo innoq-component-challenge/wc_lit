@@ -1,7 +1,7 @@
 import { BootstrapElement, html, unsafeHTML } from '../bootstrap_element.js';
 
 
-class ListCard extends BootstrapElement {
+class LitCard extends BootstrapElement {
 
 	static properties = {
 		headingLevel: { 
@@ -20,22 +20,21 @@ class ListCard extends BootstrapElement {
 
 	renderTitle() {
 		const headerContent = this.querySelector('[slot=heading]');
-		const slot = headerContent ? '<slot name="heading"></slot>' : this.heading;
-		const openingTag = `<h${ this.headingLevel } class="card-title">`;
-		const closingTag = `</h${ this.headingLevel }>`;
-		return `
-		${ openingTag }
-			${ this.href ? `<a href=${ this.href }>${ slot }</a>` : `${ slot }` }
-		${ closingTag }
+		const slotContent = headerContent ? headerContent : this.heading;
+		return html`
+			<lit-card-header heading-level="${this.headingLevel}">
+				<div slot="heading-inner">
+					${ this.href ? html`<a href=${ this.href }>${ slotContent }</a>` : html`${ slotContent }` }
+				</div>
+			</lit-card-header>
 		`;
 	}
-
 
 	render() {
 		return html`
 		<section class="card">
 			<div class="card-body">
-				${ unsafeHTML(this.renderTitle()) }
+				${ this.renderTitle() }
 				<p class="card-text"><slot></slot></p>
 			</div>
 			${ this.renderFooter() }
@@ -44,4 +43,4 @@ class ListCard extends BootstrapElement {
 	}
 }
 
-export default ListCard.register('lit-card');
+export default LitCard.register('lit-card');
