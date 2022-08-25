@@ -44,11 +44,10 @@
         </lit-card>
 
         <h1 class="mt-5">List</h1>
-        <lit-list>
-            <lit-list-dt>Type</lit-list-dt>
-            <lit-list-dd>Car</lit-list-dd>
-            <lit-list-dt>Color</lit-list-dt>
-            <lit-list-dd><span lang="de">Etwas</span> text</lit-list-dd>
+        <lit-list unsafe="true" children='{"type": "Car", "Foo": "<span lang=\"de\">Etwas</span> text"}'>
+        </lit-list>
+        <hr />
+        <lit-list ratio="8:4" children='{"type": "Bike", "Foo": "Bar"}'>
         </lit-list>
         
         <h1 class="mt-5">MagicHeaders</h1>
@@ -87,6 +86,7 @@
     <script type="module" src="components/button.js"></script>
     <script type="module" src="components/card-header.js"></script>
     <script type="module" src="components/card.js"></script>
+    <script type="module" src="components/list.js"></script>
 </body>
 
 </html>
