@@ -8,11 +8,9 @@ const TYPES = {
 
 class LitBadge extends BootstrapElement {
 
-	static get properties() {
-		return {
-			caption: String,
-			type: String
-		}
+	static properties = {
+		caption: String,
+		type: String
 	}
 
 	render() {

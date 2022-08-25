@@ -1,6 +1,6 @@
-import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import { LitElement, html, css, Directive, directive, repeat, unsafeHTML } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/all/lit-all.min.js';
 
-export { html, css };
+export { html, css, unsafeHTML, Directive, directive, repeat };
 
 export class BootstrapElement extends LitElement {
 

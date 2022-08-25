@@ -13,6 +13,9 @@
         <div>
             This is a <lit-badge type="danger">Badge</lit-badge>
         </div>
+        <div>
+            This is another – more boring – <lit-badge caption="boooring">Badge</lit-badge>
+        </div>
 
         <h1 class="mt-5">Buttons</h1>
         <lit-button>Simple lit-button <lit-badge caption="Some Badge" type="danger"></lit-badge></lit-button>
@@ -24,13 +27,21 @@
         <lit-button type="button" name="action" value="delete">lit-button with name and value</lit-button>
 
         <h1 class="mt-5">Cards</h1>
-        <lit-card heading-level="2" heading="FND"> 
+        <lit-card heading-level="2"> 
             Welcome to the <strong>best card</strong>
             <span slot="heading"><span lang="de">Großartige</span> Card</span>
             <span slot="footer">This is the footer!</span>
         </lit-card>
         <hr />
-        <lit-card heading-level="2" heading="Another lit-card with a Link as Header" href="#foo"> Content baby! </lit-card>
+        <lit-card heading-level="1" heading="Another lit-card with a Link as Header" href="#foo">
+            Content baby!
+        </lit-card>
+        <hr />
+        <lit-card heading-level="3">
+            <span slot="heading">Völker der Welt</span>
+            <span slot="footer">Schaut auf diese Card</span>
+            Cardo Number <del>five</del>three
+        </lit-card>
 
         <h1 class="mt-5">List</h1>
         <lit-list>
