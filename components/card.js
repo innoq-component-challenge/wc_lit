@@ -1,4 +1,4 @@
-import { BootstrapElement, html, unsafeHTML } from '../bootstrap_element.js';
+import { BootstrapElement, html } from '../bootstrap_element.js';
 
 
 class LitCard extends BootstrapElement {
