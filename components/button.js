@@ -1,10 +1,4 @@
-import 'https://cdnjs.cloudflare.com/ajax/libs/classnames/2.3.1/index.min.js';
-import { BootstrapElement, html, Directive, directive } from '../bootstrap_element.js';
-
-const STYLES = {
-	default: 'btn-secondary',
-	cta: 'btn-primary'
-};
+import { BootstrapElement, html, Directive, directive, classMap } from '../bootstrap_element.js';
 
 class LitButton extends BootstrapElement {
 
@@ -17,8 +11,12 @@ class LitButton extends BootstrapElement {
 	}
 
 	render() {
-		let cls = classNames('btn', STYLES[this.type] || STYLES.default, this.additionalClasses);
-		return html`<button ${ attrs() } class=${ cls }><slot></slot></button>`;
+		const classes = { 'btn': true, 'btn-primary': this.type === 'cta', 'btn-secondary': this.type !== 'cta' };
+		if (this.additionalClasses) {
+			this.additionalClasses.split(" ").forEach(c => classes[c] = true);
+		}
+		console.log('👀', classes);
+		return html`<button ${ attrs() } class="${classMap(classes)}"><slot></slot></button>`;
 	}
 
 
