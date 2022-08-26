@@ -1,4 +1,4 @@
-import { BootstrapElement, html, classMap } from '../bootstrap_element.js';
+import { BootstrapElement, html } from '../bootstrap_element.js';
 
 const TYPES = {
 	danger: "bg-danger",
@@ -13,8 +13,8 @@ class LitBadge extends BootstrapElement {
 	}
 
 	render() {
-		const classes = { 'badge': true, 'bg-secondary': this.type !== 'danger', 'bg-danger': this.type === 'danger' };
-		return html`<span class=${classMap(classes)}>${this.caption || html`<slot></slot>`}</span>`;
+		const type = TYPES[this.type] || TYPES.default;
+		return html`<span class="badge ${type}">${this.caption || html`<slot></slot>`}</span>`;
 	}
 
 }
