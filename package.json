@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-     "run": "python -m SimpleHTTPServer 8000"
+     "start": "python -m SimpleHTTPServer 8000"
   },
   "devDependencies": {
   },
