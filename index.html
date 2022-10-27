@@ -44,8 +44,32 @@
         </lit-card>
 
         <h1 class="mt-5">List</h1>
-        <lit-list unsafe="true" children='{"type": "Car", "Foo": "<span lang=\"de\">Etwas</span> text"}'>
+        <lit-list children='{"type": "Car", "Foo": "Text"}'>
         </lit-list>
+        <hr>
+        <lit-list id="list1">
+            <span slot="slot_1234">Hallo Welt!</span>
+        </lit-list>
+        <script>
+            setTimeout(() => {
+                document.getElementById('list1').addItem('type', "Car");
+                let badge = document.createElement('lit-badge');
+                badge.innerHTML = "<span lang=\"de\">Etwas</span> text";
+                document.getElementById('list1').addItem("Foo", badge);
+                document.getElementById('list1').addSlotItem("Bar", 1234);
+            }, 2000);
+        </script>
+        <hr>
+        <lit-list id="list2">
+            <lit-list-item id="key1" key="key1">Car</lit-list-item>
+            <lit-list-item id="key2" key="Foo"><lit-badge id="my_badge">Old Badge</lit-badge></lit-list-item>
+        </lit-list>
+        <script>
+            setTimeout(() => {
+                document.getElementById('key1').innerHTML = 'type_new';
+                document.getElementById('my_badge').innerHTML = 'New Badge';
+            }, 2000)
+        </script>
         <hr />
         <lit-list ratio="8:4" children='{"type": "Bike", "Foo": "Bar"}'>
         </lit-list>
